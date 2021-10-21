@@ -1,0 +1,6 @@
+rabbitmq:  
+    mqtt:    
+        url: tcp://localhost:1883    
+        username: client1    
+        password: client1
+        defaultTopic: testTopic

@@ -1,0 +1,70 @@
+{
+ "rabbit_version": "3.6.6",
+ "users": [
+  {
+   "name": "iotnet",
+   "password_hash": "kI3GCn8PyyAEMgCaXhbdAnCXsvouqK2C0tSkUnco63Pzrv2S",
+   "hashing_algorithm": "rabbit_password_hashing_sha256",
+   "tags": "administrator"
+  },
+  {
+   "name": "client1",
+   "password_hash": "gxIt38YupgjPJpGMY7x5KJ7t8uDJeB6DMK5FmVcV7n+Aq8SC",
+   "hashing_algorithm": "rabbit_password_hashing_sha256",
+   "tags": ""
+  },
+  {
+   "name": "DTU",
+   "password_hash": "kI3GCn8PyyAEMgCaXhbdAnCXsvouqK2C0tSkUnco63Pzrv2S",
+   "hashing_algorithm": "rabbit_password_hashing_sha256",
+   "tags": ""
+  },
+  {
+   "name": "iotsvc",
+   "password_hash": "kI3GCn8PyyAEMgCaXhbdAnCXsvouqK2C0tSkUnco63Pzrv2S",
+   "hashing_algorithm": "rabbit_password_hashing_sha256",
+   "tags": ""
+  }
+ ],
+ "vhosts": [
+  {
+   "name": "\/"
+  }
+ ],
+ "permissions": [
+  {
+   "user": "iotnet",
+   "vhost": "\/",
+   "configure": ".*",
+   "write": ".*",
+   "read": ".*"
+  },
+  {
+   "user": "client1",
+   "vhost": "\/",
+   "configure": ".*",
+   "write": ".*",
+   "read": ".*"
+  },
+  {
+   "user": "DTU",
+   "vhost": "\/",
+   "configure": ".*",
+   "write": ".*",
+   "read": ".*"
+  },
+  {
+   "user": "iotsvc",
+   "vhost": "\/",
+   "configure": ".*",
+   "write": ".*",
+   "read": ".*"
+  }
+ ],
+ "parameters": [],
+ "policies": [],
+ "queues": [],
+ "exchanges": [],
+ "bindings": []
+}
+

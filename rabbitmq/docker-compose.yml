@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  iotbroker:
+    image: rabbitmq:3-management
+    container_name: mqtt
+    restart: always
+    volumes:
+     - ./conf:/etc/rabbitmq
+    ports:
+      - 1883:1883
+      - 15672:15672
