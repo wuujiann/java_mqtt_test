@@ -38,6 +38,11 @@
 			<version>3.0.0</version>
 		</dependency>
 
+		<dependency>
+			<groupId>biz.iotnet</groupId>
+			<artifactId>mqtt</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.integration</groupId>
