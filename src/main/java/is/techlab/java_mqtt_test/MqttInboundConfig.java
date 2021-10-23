@@ -19,14 +19,18 @@ public class MqttInboundConfig {
     @Autowired    
     private MqttConfig mqttConfig;    
     
+    @Autowired    
+    private MqttClientFactoryConfig mqttClientFactoryConfig;
+
     @Bean    
     public MessageChannel mqttInputChannel() {        
         return new DirectChannel();    
     }    
+
     @Bean    
     public MessageProducer inbound() {        
         MqttPahoMessageDrivenChannelAdapter adapter =  
-            new MqttPahoMessageDrivenChannelAdapter(mqttConfig.getUrl(), "subscriberClient", mqttConfig.getDefaultTopic());        
+            new MqttPahoMessageDrivenChannelAdapter(mqttConfig.getClientId(), mqttClientFactoryConfig.mqttClientFactory(), mqttConfig.getDefaultTopic());        
         adapter.setCompletionTimeout(5000);        
         adapter.setConverter(new DefaultPahoMessageConverter());        
         adapter.setQos(1);        
@@ -41,7 +45,7 @@ public class MqttInboundConfig {
 
             @Override
             public void handleMessage(Message<?> message) throws MessagingException {
-                System.out.printf("handleMessage : {}",message.getPayload());            
+                System.out.printf("handleMessage : %s\n",message.getPayload());            
             }            
         };    
     }

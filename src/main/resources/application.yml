@@ -4,3 +4,4 @@ rabbitmq:
         username: client1    
         password: client1
         defaultTopic: testTopic
+        clientId: javaClient

@@ -4,6 +4,12 @@ Testing Java Spring Integration MQTT
 # Problem Synopsis
 SetUserName() and SetPassword() doesn't take effect.  Always default to user "guest" and password "guest".  
 
+## **UPDATE**
+The problem is with the MqttInboundConfig class.  It was calling MqttPahoMessageDrivenChannelAdapter without providing the mqttClientFactoy.  This means that the code will use the default factory which uses guest as username and password.
+```
+MqttPahoMessageDrivenChannelAdapter(mqttConfig.getClientId(), mqttClientFactoryConfig.mqttClientFactory(), mqttConfig.getDefaultTopic());        
+```
+
 # How to reproduce the problem
 ## Clone this repository
 ```
